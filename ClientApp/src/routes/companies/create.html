@@ -1,0 +1,45 @@
+<template>
+  <form action=""
+        method="get"
+        class="form-container"
+        model.bind="company">
+    <div class="form-group">
+      <label for="companyName"><b>Company name</b></label>
+      <input class="form-control"
+             placeholder="Enter company name"
+             name.bind="companyName"
+             required>
+    </div>
+    <div class="form-group">
+      <label for="companyAdress"><b>Company's Adress</b></label>
+      <input class="form-control"
+             placeholder="Enter company's adress"
+             name="companyAdress"
+             required>
+    </div>
+    <div class="form-group">
+      <label for="companyPhoneNumber"><b>Company's Phone Number</b></label>
+      <input class="form-control"
+             placeholder="Enter company's phone number"
+             name="CompanyPhoneNumber"
+             required>
+    </div>
+    <div class="form-group">
+      <label for="companyWebsite"><b>Company's WebSite</b></label>
+      <input class="form-control"
+             placeholder="Add WebSite"
+             name="companyWebSite"
+             required>
+    </div>
+    <div class="form-group">
+      <label for="companyRegistrationNumber"><b>Company's Registration Number</b></label>
+      <input class="form-control"
+             placeholder="Add Registration Number"
+             name="companyRegistrationNumber"
+             required>
+    <button type="submit"
+            click.delegate="submit()"
+            class="btn btn-primary">Add Company</button>
+    <a route-href="route: home">Cancel</a>
+  </form>
+</template>

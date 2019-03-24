@@ -1,0 +1,54 @@
+<template>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <div class="row">
+            <div class="col-md-8">
+              <a route-href="route: create" class="btn">
+                <i class="fa fa-plus"></i> New Recruiter</a>
+            </div>
+            <div class="col-md-4">
+              <search search.call="search($event)" clear.call="clear()"></search>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">Phone Number</th>
+        <th scope="col">Identifier</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr repeat.for="recruiter of recruiters">
+        <td>${recruiter.id}</td>
+        <td>
+          <a route-href="route: details; params.bind:{id: recruiter.id}"
+            class="${$index==0 ? 'active': ''}">
+           ${recruiter.firstName}
+          </a>
+        </td>
+        <td>
+          ${recruiter.lastName}
+        </td>
+        <td>
+         ${recruiter.phoneNumber}
+        </td>
+        <td>
+        ${recruiter.identifier}
+        </td>
+        <td><button type="button" class="btn btn-danger" click.trigger="delete(recruiter.id)">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+  <div if.bind="!recruiters">
+    No Recruiters
+  </div>
+</template>

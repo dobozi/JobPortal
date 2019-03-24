@@ -1,0 +1,41 @@
+<template>
+<form action=""
+        method="get"
+        class="form-container"
+        model.bind="recruiter">
+    </div>
+    <div class="form-group">
+      <label for="firstName"><b>First Name</b></label>
+      <input class="form-control"
+             placeholder="Enter your First Name"
+             value.bind="recruiter.firstName"
+             required>
+    </div>
+    <div class="form-group">
+      <label for="lastName"><b>Last Name</b></label>
+      <input class="form-control"
+             placeholder="Enter your Last Name"
+             value.bind="recruiter.lastName"
+             required>
+       <div class="form-group">
+        <label for="phoneNumber"><b>Phone Number</b></label>
+        <input class="form-control"
+               placeholder="Enter Phone Number"
+               value.bind="recruiter.phoneNumber"
+               required>         
+    </div>
+    <div class="form-group">
+      <label for="identifier"><b>Identifier</b></label>
+      <input class="form-control"
+             placeholder="Enter Identifier"
+             value.bind="recruiter.identifier"
+             required>         
+  </div>
+    </div>
+    <button type="submit"
+            click.delegate="submit()"
+            class="btn btn-primary">Add Recruiter</button>
+    <a route-href="route: home"
+    class ="btn btn-secondary">Cancel</a>
+  </form>
+</template>

@@ -1,0 +1,10 @@
+<template>
+  <input type="text"
+         value.bind="userName">
+  <input type="password"
+         value.bind="password">
+  <span class="text-danger"
+        show.bind="isPasswordValid">${message}</span>
+  <button class="btn btn-info"
+          disabled.bind="onSave">Save</button>
+</template>

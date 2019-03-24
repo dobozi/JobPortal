@@ -1,0 +1,48 @@
+﻿<template>
+  <form action=""
+        method="get"
+        class="form-container"
+        >
+    <div class="form-group">
+      <label for="jobTitle"><b>Job title</b></label>
+      <input class="form-control"
+             placeholder="Enter Job title"
+             value.bind="job.jobTitle"
+             //required >
+    </div>
+    <div class="form-group">
+      <label for="job.jobDescription"><b>Job description</b></label>
+      <input class="form-control"
+             placeholder="Enter Job description"
+             value.bind="job.jobDescription"
+             //required>
+    </div>
+    <div class="form-group">
+      <label for="companyName"><b>Company Name</b></label>
+      <input class="form-control"
+             placeholder="Enter Company Name"
+             value.bind="job.companyName"
+             //required>
+    </div>
+    <div class="form-group">
+      <label for="workPlaceAddress"><b>Workplace Address</b></label>
+      <input class="form-control"
+             placeholder="Enter Workplace Address"
+             value.bins="job.workPlaceAddress"
+            // required>
+    </div>
+    <div class="form-group">
+      <label for="workSchedule"><b>Work Schedule</b></label>
+      <input class="form-control"
+             placeholder="Enter Work Schedule"
+             value.bind="job.workSchedule"
+             //required>
+    </div>
+    <button type="submit"
+            click.delegate="submit()"
+            class="btn btn-primary">Add job</button>
+    <button  click.delegate="back()"
+            class="btn btn-primary">
+    Cancel</button>
+  </form>
+</template>

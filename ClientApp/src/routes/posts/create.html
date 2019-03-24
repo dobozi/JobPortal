@@ -1,0 +1,34 @@
+<template>
+    <form action=""
+            method="get"
+            class="form-container"
+            model.bind="post">
+        </div>
+        <div class="form-group">
+          <label for="title"><b>Title</b></label>
+          <input class="form-control"
+                 placeholder="Enter Title"
+                 value.bind="post.title"
+                 required>
+        </div>
+        <div class="form-group">
+          <label for="description"><b>Description</b></label>
+          <input class="form-control"
+                 placeholder="Enter Description"
+                 value.bind="post.description"
+                 required>
+           <div class="form-group">
+            <label for="author"><b>Author</b></label>
+            <input class="form-control"
+                   placeholder="Enter Author`s Name"
+                   value.bind="post.author"
+                   required>         
+        </div>
+        </div>
+        <button type="submit"
+                click.delegate="submit()"
+                class="btn btn-primary">Add Post</button>
+        <a route-href="route: home"
+        class ="btn btn-secondary">Cancel</a>
+      </form>
+    </template>

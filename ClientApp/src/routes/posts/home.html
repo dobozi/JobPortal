@@ -1,0 +1,58 @@
+<template>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <div class="row">
+              <div class="col-md-8">
+                <a route-href="route: create" class="btn">
+                  <i class="fa fa-plus"></i> New Post</a>
+              </div>
+              <div class="col-md-4">
+                <search search.call="search($event)" clear.call="clear()"></search>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Title</th>
+          <th scope="col">Description</th>
+          <th scope="col">Author</th>
+          <th scope="col">Created Date</th>
+          <th scope="col">Modified Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr repeat.for="post of posts">
+          <td>${post.id}</td>
+          <td>
+            <a route-href="route: details; params.bind:{id: post.id}"
+              class="${$index==0 ? 'active': ''}">
+             ${post.title}
+            </a>
+          </td>
+          <td>
+            ${post.description}
+          </td>
+          <td>
+           ${post.author}
+          </td>
+          <td>
+          ${post.createdDate}
+          </td>
+          <td>
+              ${post.modifiedDate}
+          </td>
+          <td><button type="button" class="btn btn-danger" click.trigger="delete(post.id)">Delete</button></td>
+        </tr>
+      </tbody>
+    </table>
+    <div if.bind="!posts">
+      No Posts
+    </div>
+  </template>

@@ -1,0 +1,39 @@
+<template>
+  <form action=""
+        method="get"
+        class="form-container"
+        model.bind="candidate">
+    <div class="form-group">
+      <label for="candidateName"><b>Candidate Name</b></label>
+      <input class="form-control"
+             placeholder="Enter candidate name"
+             name.bind="candidateName"
+             required>
+    </div>
+    <div class="form-group">
+      <label for="candidateAdress"><b>Candidate's Adress</b></label>
+      <input class="form-control"
+             placeholder="Enter candidate's adress"
+             name="candidateAdress"
+             required>
+    </div>
+    <div class="form-group">
+      <label for="candidatePhoneNumber"><b>Candidate's Phone Number</b></label>
+      <input class="form-control"
+             placeholder="Enter candidate's phone number"
+             name="CandidatePhoneNumber"
+             required>
+    </div>
+    <div class="form-group">
+      <label for="candidateCV"><b>Candidate CV</b></label>
+      <input class="form-control"
+             placeholder="Add CV"
+             name="candidateCV"
+             required>
+    </div>
+    <button type="submit"
+            click.delegate="submit()"
+            class="btn btn-primary">Add Candidate</button>
+    <a route-href="route: home">Cancel</a>
+  </form>
+</template>

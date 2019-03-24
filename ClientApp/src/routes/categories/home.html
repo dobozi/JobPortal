@@ -1,0 +1,50 @@
+<template>
+  <section>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col col-lg-6">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam suscipit sapiente at amet dicta. Eius, officiis
+          distinctio. Provident exercitationem, fuga id ratione, cumque, dolores repellendus iste harum repudiandae
+          rerum
+          ipsa.
+          <p>
+            <a route-href="route: create"
+               class="btn btn-primary my-2">
+              Add new category
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="album py-5 bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4"
+             repeat.for="category of categories">
+          <div class="card mb-4 shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">
+                ${category.name}
+                <div class="float-right">
+                  <a class="btn btn-sm"
+                     click.trigger="delete(category.id)"><i class="fa fa-trash text-danger"></i></a>
+                </div>
+              </h5>
+              <h6 class="card-subtitle mb-2 text-muted"> ${category.created}</h6>
+              <p class="card-text">${category.description}</p>
+              <a route-href="route: details; params.bind:{id: category.id}"
+                 class="card-link">
+                View
+              </a>
+              <a route-href="route: edit; params.bind:{id: category.id}"
+                 class="card-link">
+                Edit
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

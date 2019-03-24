@@ -1,0 +1,16 @@
+<template>
+  <div class="list-group">
+    <a route-href="route: details; params.bind:{id: candidate.id}"
+       class="list-group-item list-group-item-action ${$index==0 ? 'active': ''}"
+       repeat.for="candidate of candidates">
+      <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1">${candidate.name}</h5>
+        <small>
+          ${candidate.created}
+        </small>
+      </div>
+      <p class="mb-1">${candidate.description}</p>
+      <small>${$index}</small>
+    </a>
+  </div>
+</template>
